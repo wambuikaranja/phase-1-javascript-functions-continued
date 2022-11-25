@@ -14,9 +14,11 @@ let mondayWork = function(task = 'go to the office') {
 console.log(mondayWork ('attend the Microsoft Campus Tour'))
 
 //function-level-scope
-function wrapAdjective (visualFlair = '*') {
-    const innerFunction = function (p = 'Special') {
-        return 'You are' + p ;
+function wrapAdjective (result = '*') {
+    return function (emphatic) {
+        return `You are ${result}${emphatic}${result}!` ;
     }
-    return innerFunction;
+    
 }
+wrapAdjective('*')("a hard worker")
+wrapAdjective("||")("a dedicated programmer")
